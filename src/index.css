@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', sans-serif;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: theme('colors.primary');
+  background-image: linear-gradient(to bottom right, theme('colors.space.dark'), theme('colors.primary'));
+  color: theme('colors.quaternary');
+  min-height: 100vh;
+}
+
+@layer components {
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold text-quaternary relative inline-block mb-8;
+  }
+  
+  .section-heading::after {
+    content: '';
+    @apply absolute -bottom-2 left-0 w-1/2 h-1 bg-secondary;
+  }
+  
+  .nav-link {
+    @apply text-quaternary hover:text-secondary transition-colors duration-300;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 border border-secondary text-secondary hover:bg-secondary/10 transition-all duration-300 rounded font-medium;
+  }
+}
