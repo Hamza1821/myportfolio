@@ -55,19 +55,25 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
     
-    // Note: In a real implementation, you would need to set up EmailJS with your service ID, template ID, and user ID
-    // This is a placeholder for demonstration purposes
-    // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formRef.current, 'YOUR_USER_ID')
-    
-    // Simulating email sending for demo purposes
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-      
-      // Clear success message after 5 seconds
-      setTimeout(() => setSubmitStatus(null), 5000);
-    }, 1500);
+    emailjs.sendForm(
+      'service_g9f6gks', // Replace with your EmailJS service ID
+      'template_mcqmbrd', // Replace with your EmailJS template ID
+      formRef.current,
+      'DiKmGtoK7A44HusL1' // Replace with your EmailJS public key
+    )
+      .then((result) => {
+        setIsSubmitting(false);
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+        
+        // Clear success message after 5 seconds
+        setTimeout(() => setSubmitStatus(null), 5000);
+      })
+      .catch((error) => {
+        setIsSubmitting(false);
+        setSubmitStatus('error');
+        console.error('Error sending email:', error);
+      });
   };
 
   return (
@@ -110,6 +116,7 @@ const Contact = () => {
           
           <div className="contact-form">
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+              
               <div>
                 <label htmlFor="name" className="block text-tertiary mb-2">Name</label>
                 <input
