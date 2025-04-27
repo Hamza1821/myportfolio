@@ -159,6 +159,7 @@ const Hero = () => {
               <span>{displayText}</span>
               <span className="animate-pulse">|</span>
             </h2>
+            <br />
           </div>
           
           <p className="hero-desc text-tertiary max-w-xl mb-8 text-lg">
@@ -170,7 +171,7 @@ const Hero = () => {
             <a href="https://github.com/Hamza1821" target="_blank" rel="noopener noreferrer" className="social-icon text-quaternary hover:text-secondary transition-colors duration-300">
               <FiGithub size={24} />
             </a>
-            <a href="https://www.linkedin.com/in/hamza-mubin/" target="_blank" rel="noopener noreferrer" className="social-icon text-quaternary hover:text-secondary transition-colors duration-300">
+            <a href="https://www.linkedin.com/in/hamzamubin/" target="_blank" rel="noopener noreferrer" className="social-icon text-quaternary hover:text-secondary transition-colors duration-300">
               <FiLinkedin size={24} />
             </a>
             <a href="mailto:hamzamubeen182@gmail.com" className="social-icon text-quaternary hover:text-secondary transition-colors duration-300">
