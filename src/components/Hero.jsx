@@ -149,7 +149,7 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 md:px-6 z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="flex flex-col items-start justify-center">
+          <div className="flex flex-col items-start justify-center gap-4">
   
           <h1 className="hero-name text-5xl md:text-7xl font-bold text-quaternary mb-2">Hamza Mubin</h1>
           
